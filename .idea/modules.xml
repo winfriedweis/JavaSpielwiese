@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JavaSpielwiese.iml" filepath="$PROJECT_DIR$/JavaSpielwiese.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmartHomeAufgabe/SmartHomeAufgabe.iml" filepath="$PROJECT_DIR$/SmartHomeAufgabe/SmartHomeAufgabe.iml" />
+    </modules>
+  </component>
+</project>

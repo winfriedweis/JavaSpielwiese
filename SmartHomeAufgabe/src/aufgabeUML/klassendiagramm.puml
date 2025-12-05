@@ -1,0 +1,59 @@
+@startuml
+skinparam classAttributeIconSize 0
+top to bottom direction
+
+class Client {
+    + main(): void
+}
+
+abstract class SmartHomeFactory {
+    {abstract} + List<SmartDevice> erstelleStandardKit();
+}
+class VillaFactory {
+}
+class ApartmentFactory {
+}
+class LoftFactory {
+}
+package devices {
+    abstract class SmartDevice {
+    + SmartDevice(deviceName: String)
+    + {abstract} getDeviceType(): String
+    # deviceName: String
+    # isActive: boolean
+    # getStatus(): String
+    # turnOn(): void
+    # turnOff(): void
+    # toString()
+    }
+    class Poolsteuerung {
+    }
+    class Garagentor {
+    }
+    class Alarmsystem {
+    }
+    class Heizung {
+    }
+    class Lichtsystem {
+    }
+    class Sicherheitskamera {
+    }
+    class Klimaanlage {
+    }
+}
+
+Client --> SmartHomeFactory: nutzt
+
+VillaFactory --|> SmartHomeFactory
+ApartmentFactory --|> SmartHomeFactory
+LoftFactory --|> SmartHomeFactory
+
+SmartHomeFactory ..> SmartDevice : erstellt
+Poolsteuerung --|> SmartDevice
+Garagentor --|> SmartDevice
+Alarmsystem --|> SmartDevice
+Heizung --|> SmartDevice
+Lichtsystem --|> SmartDevice
+Sicherheitskamera --|> SmartDevice
+Klimaanlage --|> SmartDevice
+@enduml
