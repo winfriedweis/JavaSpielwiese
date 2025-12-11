@@ -1,0 +1,5 @@
+package tag3_calculator;
+
+public interface Operation {
+    int execute(int a, int b);
+}

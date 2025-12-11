@@ -1,0 +1,48 @@
+@startuml
+title Valid Parentheses
+
+start
+
+:Input s;
+:Stack<Character> stack = new Stack<>();
+
+while (i < s.length())
+  :char c = s.charAt(i);
+
+  if (c == '(' or c == '[' or c == '{') then (öffnend)
+    :stack.push(c);
+  else (schließend)
+    if (stack.empty()) then (leer)
+      :return false;
+      stop
+    else (nicht leer)
+      :char open = stack.pop();
+
+      if (c == ')' and open != '(') then (nicht passend)
+        :return false;
+        stop
+      elseif (c == ']' and open != '[') then (nicht passend)
+        :return false;
+        stop
+      elseif (c == '}' and open != '{') then (nicht passend)
+        :return false;
+        stop
+      else (passend)
+        note right
+          Klammerpaar ist gültig
+        end note
+      endif
+    endif
+  endif
+
+  :i++;
+endwhile
+
+if (stack.empty()) then (leer)
+  :return true;
+else (nicht leer)
+  :return false;
+endif
+
+stop
+@enduml
